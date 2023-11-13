@@ -2,7 +2,6 @@
 abbrlink: ''
 categories: []
 date: ''
-permalink: index.html
 tags: []
 title: Hello World
 updated: 2023-11-12T16:46:30.591+8:0

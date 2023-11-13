@@ -71,4 +71,4 @@ jobs:
 
       - name: Deploy hexo
         run: |
-          npm run deploy
+          cnpm run deploy

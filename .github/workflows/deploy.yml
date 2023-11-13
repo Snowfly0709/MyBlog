@@ -19,7 +19,9 @@ env:
   GIT_DEPLOY_REPO: Snowfly0709/Snowfly0709.github.io
   # Hexo 编译后要部署到的分支
   GIT_DEPLOY_BRANCH: main
-  
+
+  # 注意替换为你的 GitHub 源仓库地址
+  GIT_SOURCE_REPO: git@github.com:Snowfly0709/Snowfly0709.github.io.git
 
 jobs:
   build:
@@ -68,7 +70,9 @@ jobs:
           cnpm install hexo-cli -g
           cnpm install hexo-generator-index --save
           cnpm install hexo-baidu-url-submit hexo-generator-index2 hexo-symbols-count-time hexo-blog-encrypt hexo-deployer-git --save
+          # 复制中文语言包，解决菜单英文的问题
+          cp zh-CN.yml node_modules/hexo-theme-next/languages/
 
       - name: Deploy hexo
         run: |
-          cnpm run deploy
+          npm run deploy

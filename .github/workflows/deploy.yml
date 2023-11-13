@@ -70,7 +70,7 @@ jobs:
           cnpm install
           cnpm install hexo-cli -g
           cnpm install hexo-generator-index --save
-          cnpm install hexo-baidu-url-submit hexo-generator-index2 hexo-symbols-count-time hexo-blog-encrypt hexo-deployer-git --save
+          cnpm install hexo-generator-index2 hexo-symbols-count-time hexo-blog-encrypt hexo-deployer-git --save
 
       - name: Deploy hexo
         run: |

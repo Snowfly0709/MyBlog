@@ -1,60 +1,75 @@
-name: Blog CI/CD
+# Action 的名字
+name: Hexo Auto Deploy
 
-# 触发条件：在 push 到 hexo-blog-backup 分支后触发
 on:
+  # 触发条件1：main 分支收到 push 后执行任务。
   push:
-    branches: 
-      - master
+    branches:
+      - main
+  # 触发条件2：手动按钮
+  workflow_dispatch:
 
+# 这里放环境变量,需要替换成你自己的
 env:
-  TZ: Asia/Shanghai
+  # Hexo 编译后使用此 git 用户部署到 github 仓库
+  GIT_USER: Xiong Zifeng
+  # Hexo 编译后使用此 git 邮箱部署到 github 仓库
+  GIT_EMAIL: ZifengXiong@foxmail.com
+  # Hexo 编译后要部署的 github 仓库
+  GIT_DEPLOY_REPO: Snowfly0709/Snowfly0709.github.io
+  # Hexo 编译后要部署到的分支
+  GIT_DEPLOY_BRANCH: main
+  
 
 jobs:
-  blog-cicd:
-    name: Hexo blog build & deploy
-    runs-on: ubuntu-latest # 使用最新的 Ubuntu 系统作为编译部署的环境
+  build:
+    name: Build on node ${{ matrix.node_version }} and ${{ matrix.os }}
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    strategy:
+      matrix:
+        os: [ubuntu-18.04]
+        node_version: [12.x]
 
     steps:
-    - name: Checkout codes
-      uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
 
-    - name: Setup node
-      # 设置 node.js 环境
-      uses: actions/setup-node@v1
-      with:
-        node-version: '12.x'
+      - name: Checkout deploy repo
+        uses: actions/checkout@v2
+        with:
+          repository: ${{ env.GIT_DEPLOY_REPO }}
+          ref: ${{ env.GIT_DEPLOY_BRANCH }}
+          path: .deploy_git
 
-    - name: Cache node modules
-      # 设置包缓存目录，避免每次下载
-      uses: actions/cache@v1
-      with:
-        path: ~/.npm
-        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+      - name: Use Node.js ${{ matrix.node_version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node_version }}
 
-    - name: Install hexo dependencies
-      # 下载 hexo-cli 脚手架及相关安装包
-      run: |
-        npm install -g hexo-cli --force
-        npm install --force
+      - name: Configuration environment
+        env:
+          HEXO_DEPLOY_PRI: ${{secrets.HEXO_DEPLOY_PRI}}
+        run: |
+          sudo timedatectl set-timezone "Asia/Shanghai"
+          mkdir -p ~/.ssh/
+          echo "$HEXO_DEPLOY_PRI" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+          # coding 已取消同步
+          ssh-keyscan -t rsa e.coding.net >> ~/.ssh/known_hosts
+          ssh-keyscan -t rsa gitee.com >> ~/.ssh/known_hosts
+          git config --global user.name $GIT_USER
+          git config --global user.email $GIT_EMAIL
 
-    - name: Generate files
-      # 编译 markdown 文件
-      run: |
-        hexo clean
-        hexo generate
+      - name: Install dependencies
+        run: |
+          npm install -g cnpm@6.0.0 -registry=https://registry.npm.taobao.org
+          cnpm install hexo-cli -g
+          cnpm uninstall hexo-generator-index --save
+          cnpm install hexo-baidu-url-submit hexo-generator-index2 hexo-symbols-count-time hexo-blog-encrypt hexo-deployer-git --save
 
-    - name: Deploy hexo blog
-      env: 
-        # Github 仓库
-        GITHUB_REPO: github.com/Snowfly0709/Snowfly0709.github.io
-        # Coding 仓库
-        CODING_REPO: github.com/Snowfly0709/MyBlog.git
-      # 将编译后的博客文件推送到指定仓库
-      run: |
-        cd ./public && git init && git add .
-        git config user.name "yifanzheng"
-        git config user.email "zhengyifan1996@outlook.com"
-        git add .
-        git commit -m "GitHub Actions Auto Builder at $(date +'%Y-%m-%d %H:%M:%S')"
-        git push --force --quiet "https://${{ secrets.ACCESS_TOKEN }}@$GITHUB_REPO" main:main
-        git push --force --quiet "https://RoYFbFDSfM:${{ secrets.CODING_TOKEN }}@$CODING_REPO" master:master
+      - name: Deploy hexo
+        run: |
+          cnpm run deploy
+		  

@@ -1,9 +1,9 @@
 ---
-title: 友情链接
-date: 2021-06-16 00:34:27
 comment: false
+date: '2021-06-16T00:34:27+08:00'
+title: 友链
+updated: 2023-11-25T11:28:48.361+8:0
 ---
-
 <div class="post-body">
    <div id="links">
       <style>

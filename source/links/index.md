@@ -2,7 +2,7 @@
 comment: false
 date: '2021-06-16T00:34:27+08:00'
 title: 友链
-updated: 2023-11-25T16:59:32.615+8:0
+updated: 2023-11-25T17:22:54.739+8:0
 ---
 <div class="post-body">
    <div id="links">
@@ -77,6 +77,14 @@ updated: 2023-11-25T16:59:32.615+8:0
                      <a href="https://blog.hvnobug.com/">Emil’s blog</a>
                   </div>
                   <div class="info">接入友链技术的大佬Blog</div>
+               </div>
+            </div>
+            <div class="card">
+               <div class="card-header">
+                  <div>
+                     <a href="https://yijunquan.blog.csdn.net/?type=blog">泉的CSDN</a>
+                  </div>
+                  <div class="info">西交软院学子必备</div>
                </div>
             </div>
          </div>

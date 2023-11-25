@@ -5,4 +5,4 @@ title: 个人简介
 type: about
 updated: 2023-11-25T18:52:55.327+8:0
 ---
-<img src="img/jl.png" />
+<img src="/img/jl.png" />

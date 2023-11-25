@@ -75,16 +75,7 @@ date: 2021-06-16 00:34:27
                   <div>
                      <a href="https://blog.hvnobug.com/">Emil’s blog</a>
                   </div>
-                  <div class="info">这是一个分享IT技术的小站。</div>
-               </div>
-            </div>
-            <div class="card">
-               <img class="ava" src="https://yingwiki.top/avatar" />
-               <div class="card-header">
-                  <div>
-                     <a href="https://yingwiki.top">越行勤's Blog</a>
-                  </div>
-                  <div class="info">努力学习的小菜鸟</div>
+                  <div class="info">接入友链技术的大佬Blog</div>
                </div>
             </div>
          </div>

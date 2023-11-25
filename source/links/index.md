@@ -2,7 +2,7 @@
 comment: false
 date: '2021-06-16T00:34:27+08:00'
 title: 友链
-updated: 2023-11-25T11:28:48.361+8:0
+updated: 2023-11-25T16:59:32.615+8:0
 ---
 <div class="post-body">
    <div id="links">
@@ -51,7 +51,7 @@ updated: 2023-11-25T11:28:48.361+8:0
          }
          .card .card-header a {
          font-style: normal;
-         color: #2bbc8a;
+         color: #ffffff;
          font-weight: bold;
          text-decoration: none;
          }
@@ -61,7 +61,7 @@ updated: 2023-11-25T11:28:48.361+8:0
          }
          .card .card-header .info {
          font-style:normal;
-         color:#a3a3a3;
+         color:#ffffff;
          font-size:14px;
          min-width: 0;
          overflow: hidden;

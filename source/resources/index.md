@@ -52,7 +52,7 @@ updated: 2023-11-25T16:48:56.785+8:0
          }
          .card .card-header a {
          font-style: normal;
-         color: #000000;
+         color: #ffffff;
          font-weight: bold;
          text-decoration: none;
          }
@@ -62,7 +62,7 @@ updated: 2023-11-25T16:48:56.785+8:0
          }
          .card .card-header .info {
          font-style:normal;
-         color:#000000;
+         color:#ffffff;
          font-size:14px;
          min-width: 0;
          overflow: hidden;

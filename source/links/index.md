@@ -80,6 +80,7 @@ updated: 2023-11-25T17:22:54.739+8:0
                </div>
             </div>
             <div class="card">
+            <img class="ava" src="/img/yljq.png" alt="yljq"/>
                <div class="card-header">
                   <div>
                      <a href="https://yijunquan.blog.csdn.net/?type=blog">泉的CSDN</a>

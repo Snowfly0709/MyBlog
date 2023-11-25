@@ -1,44 +1,43 @@
 ---
 abbrlink: ''
-categories: []
+categories:
+- - 首页
 date: ''
 permalink: index.html
 tags: []
-title: Hello World
-updated: 2023-11-13T11:13:27.845+8:0
+title: 南来北往处
+updated: 2023-11-25T9:54:5.61+8:0
 ---
-QQ! Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
+你好！欢迎来到Snowfly的博客！
+
+这里是关于我的一站式平台，你不仅可以从此处一键前往我的github或其他个人主页浏览消息，同时也可以在网站上阅读我从写博客以来至今的所有推文。同时，你还可以根据时间轴、标签或分类来锁定你的浏览兴趣。在每篇博客的下方都有打赏和评论区，如果你觉得好的话，请尽情地用物质或者文字让我收到你的赞赏吧！
+
+下面是关于这个网站的快速上手方法：
 
 ## Quick Start
 
-### Create a new post
+### 浏览推文
 
 ```bash
-$ hexo new "My New Post"
+$ 你可以通过时间轴、标签或者分类来浏览你感兴趣的内容
 ```
 
-More info: [Writing](https://hexo.io/docs/writing.html)
-
-### Run server
+### 个人信息
 
 ```bash
-$ hexo server
+$ 你可以在我的个人简介中获取我的详尽个人资料
 ```
 
-More info: [Server](https://hexo.io/docs/server.html)
 
-### Generate static files
+### 资源下载
 
 ```bash
-$ hexo generate
+$ 有时我会将一些个人的摄影作品或是一些有帮助的链接、文件放上来，供大家访问下载
 ```
 
-More info: [Generating](https://hexo.io/docs/generating.html)
 
-### Deploy to remote sites
+### 访问我的其他站点
 
 ```bash
-$ hexo deploy
+$ 目前开放了CSDN和Github供大家访问，我应该会在上面同步更新一些计算机资料和Leetcode
 ```
-
-More info: [Deployment](https://hexo.io/docs/one-command-deployment.html)

@@ -2,7 +2,7 @@
 comment: false
 date: '2021-06-16T00:34:27+08:00'
 title: 友链
-updated: 2023-11-25T17:22:54.739+8:0
+updated: 2023-11-26T14:4:19.504+8:0
 ---
 <div class="post-body">
    <div id="links">
@@ -86,6 +86,15 @@ updated: 2023-11-25T17:22:54.739+8:0
                      <a href="https://yijunquan.blog.csdn.net/?type=blog">泉的CSDN</a>
                   </div>
                   <div class="info">西交软院学子必备</div>
+               </div>
+            </div>
+            <div class="card">
+            <img class="ava" src="/img/lc.png" alt="lc"/>
+               <div class="card-header">
+                  <div>
+                     <a href="https://blog.csdn.net/weixin_64112516?type=blog">凌晨的CSDN</a>
+                  </div>
+                  <div class="info">西交软院2021级也有自己的blogger了</div>
                </div>
             </div>
          </div>
